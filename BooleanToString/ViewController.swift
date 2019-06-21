@@ -43,10 +43,14 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
     
     @objc func verify(sender: UIButton!) {
         
-        let alertController = UIAlertController(title: "Result", message: "\(String(boolConvert))", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Result", message: booleanToString(boolConvert), preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { _ in}))
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func booleanToString(_ b: Bool) -> String {
+        return b.description
     }
     
     override func viewDidLoad() {
@@ -58,7 +62,6 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
 
         buttonView.addTarget(self, action:#selector(self.verify(sender:)), for: .touchUpInside)
 
-        
     }
 
     override func didReceiveMemoryWarning() {

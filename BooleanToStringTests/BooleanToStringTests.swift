@@ -11,26 +11,23 @@ import XCTest
 
 class BooleanToStringTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    static var allTests = [
+        ("Function should return \"true\" when true is passed as input.", testExample1),
+        ("Function should return \"false\" when false is passed as input.", testExample2)
+    ]
+    
+    func testExample1() {
+        XCTAssertEqual(booleanToString(true), "true")
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testExample2() {
+        XCTAssertEqual(booleanToString(false), "false")
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func booleanToString(_ b: Bool) -> String {
+        return b.description
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
+
+    
+
